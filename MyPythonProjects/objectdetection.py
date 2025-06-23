@@ -13,7 +13,7 @@ def detect_rectangles(img):
     MAX_WIDTH_CM = 125
     MIN_HEIGHT_CM = 90
     MAX_HEIGHT_CM = 105
-
+#KENNY IS WRITING THIS CODE
     rectangles = []
 
     # Preprocessing
