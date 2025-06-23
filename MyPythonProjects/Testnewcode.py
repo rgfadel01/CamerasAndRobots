@@ -116,12 +116,12 @@ import numpy as np
 
 
 # --- Robot Initialization ---
-#R = abb.Robot(ip='127.0.0.1')
-R = abb.Robot(ip='192.168.125.1')
+R = abb.Robot(ip='127.0.0.1')
+#R = abb.Robot(ip='192.168.125.1')
 #R.call_flyfrompart()
 
 
-#R.set_joints([90, 0, 0, 0, 0, 0])  
+R.set_joints([90, 0, 0, 0, 0, 0])  
 
 pose = R.get_cartesian()
 print("current pose of the robot, in millimeters :",pose)
