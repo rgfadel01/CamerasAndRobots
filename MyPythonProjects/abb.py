@@ -157,7 +157,7 @@ class Robot:
         msg = "07 " + self.format_pose(work_obj)
         self.send(msg)
 
-    def set_speed(self, speed=[100, 50, 50, 50]):
+    def set_speed(self, speed=[200, 50, 50, 50]):
         """
         speed: [robot TCP linear speed (mm/s), TCP orientation speed (deg/s),
                 external axis linear, external axis orientation]
@@ -295,8 +295,12 @@ class Robot:
         and fill in the DIO you want this to switch.
         """
         msg = "97 " + str(int(bool(value))) + " #"
-        return
-        # return self.send(msg)
+        #return
+        return self.send(msg)
+
+
+
+
 
     def send(self, message, wait_for_response=True):
         """
@@ -334,6 +338,11 @@ class Robot:
 
     def __exit__(self, type, value, traceback):
         self.close()
+    
+    def call_flyfrompart(self):
+        msg = "105 #"
+        self.send(msg)
+
 
 
 def check_coordinates(coordinates):
