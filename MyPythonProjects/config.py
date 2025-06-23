@@ -5,8 +5,8 @@ from zigzag import run_zigzag
 
 from run_zigzag_left import run_zigzag_left
 from run_zigzag_right import run_zigzag_right
-#R = abb.Robot(ip='127.0.0.1')
-R = abb.Robot(ip='192.168.125.1')
+R = abb.Robot(ip='127.0.0.1')
+#R = abb.Robot(ip='192.168.125.1')
 
 # Example parameters:
 zigzag_width = 500
@@ -20,11 +20,11 @@ print(f"Will run {Total_number_NODES_X} top‐flange tiles in X")
 
 for i in range(Total_number_NODES_X):
     R.call_flyfrompart()
-    #run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z)
-    #R.call_flyfrompart()
+   # run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z)
+    R.call_flyfrompart()
     #NOT WORKING run_zigzag_left(R, Total_number_NODES_X, zigzag_width, total_z)
     #R.call_flyfrompart()
-    #run_zigzag_right(R, Total_number_NODES_X, zigzag_width, total_z)
+    run_zigzag_right(R, Total_number_NODES_X, zigzag_width, total_z)
 
    # run_zigzag_top(R, Total_number_NODES_X, zigzag_width, total_z)
     #R.call_flyfrompart()

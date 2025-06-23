@@ -120,14 +120,17 @@ R = abb.Robot(ip='127.0.0.1')
 #R = abb.Robot(ip='192.168.125.1')
 #R.call_flyfrompart()
 
+ext = R.get_external_axis()
+ext[0] += 1000.0
+R.set_external_axis(ext)
 
-R.set_joints([90, 0, 0, 0, 0, 0])  
+#R.set_joints([90, 90, 90, 0, 0, 0])  
 
-pose = R.get_cartesian()
-print("current pose of the robot, in millimeters :",pose)
+#pose = R.get_cartesian()
+#print("current pose of the robot, in millimeters :",pose)
 
-pose0 = R.get_cartesian()
-print("Captured orientation:", pose0[1])
+#pose0 = R.get_cartesian()
+#print("Captured orientation:", pose0[1])
 
 
 # To turn doMaterialOn HIGH:
@@ -138,8 +141,8 @@ print("Captured orientation:", pose0[1])
 #R.set_joints([0, 0, 0, 0, 0, 0])
 
 
-external_axes = R.get_external_axis()
-print("External axis values:", external_axes)
+#external_axes = R.get_external_axis()
+#print("External axis values:", external_axes)
 
 
 
