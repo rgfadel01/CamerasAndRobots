@@ -8,6 +8,21 @@ import cv2
 import math
 import numpy as np
 
+import json
+import os
+with open("detected_rectangle.json") as f:
+    rect_data = json.load(f)
+
+
+
+
+
+
+print("dist_from_left_cm:", rect_data["dist_from_left_cm"])
+
+#print("Loaded rectangle data:", rect_data)
+# ...rest of your code...
+# Now you can use rect_data['center'], rect_data['width_cm'], etc.
 #ratio = 0.6961  # cm per pixel
 #points = []
 
@@ -116,13 +131,13 @@ import numpy as np
 
 
 # --- Robot Initialization ---
-R = abb.Robot(ip='127.0.0.1')
+#R = abb.Robot(ip='127.0.0.1')
 #R = abb.Robot(ip='192.168.125.1')
 #R.call_flyfrompart()
 
-ext = R.get_external_axis()
-ext[0] += 1000.0
-R.set_external_axis(ext)
+#ext = R.get_external_axis()
+#ext[0] += 1000.0
+#R.set_external_axis(ext)
 
 #R.set_joints([90, 90, 90, 0, 0, 0])  
 

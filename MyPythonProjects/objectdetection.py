@@ -1,7 +1,10 @@
 import cv2
 import numpy as np
+import json
+
+
 #TESTGITHUB
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 cap.set(3, 640)
 cap.set(4, 480)
 ratio = 0.6961  # cm per pixel
@@ -110,10 +113,27 @@ while True:
         cv2.imshow('Rectangle Detection', img)
         print("Is this the object you are looking for? (y/n) (Press window to focus, then type in terminal)")
         key = cv2.waitKey(0)
+        
+        
+        
         if key in [ord('y'), ord('Y')]:
             print(f"Rotated Rect: center=({rect[0][0]:.1f},{rect[0][1]:.1f}), w={rect[1][0]:.1f}, h={rect[1][1]:.1f}, "
                   f"width_cm={width_cm:.1f}, height_cm={height_cm:.1f}, angle={angle:.1f}, area={area:.0f}, "
                   f"dist_from_left={dist_from_left_cm:.1f}cm")
+            rect_data = {
+                "center": [float(rect[0][0]), float(rect[0][1])],
+                "width_px": float(rect[1][0]),
+                "height_px": float(rect[1][1]),
+                "width_cm": float(width_cm),
+                "height_cm": float(height_cm),
+                "angle": float(angle),
+                "area": float(area),
+                "dist_from_left_cm": float(dist_from_left_cm),
+                "box": box.tolist()
+            }
+            with open("detected_rectangle.json", "w") as f:
+                json.dump(rect_data, f, indent=2)
+            print("Saved rectangle data to detected_rectangle.json")
             cap.release()
             cv2.destroyAllWindows()
             exit(0)
@@ -128,3 +148,24 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+
+
+if key in [ord('y'), ord('Y')]:
+    rect_data = {
+        "center": [float(rect[0][0]), float(rect[0][1])],
+        "width_px": float(rect[1][0]),
+        "height_px": float(rect[1][1]),
+        "width_cm": float(width_cm),
+        "height_cm": float(height_cm),
+        "angle": float(angle),
+        "area": float(area),
+        "dist_from_left_cm": float(dist_from_left_cm),
+        "box": box.tolist()
+    }
+    with open("detected_rectangle.json", "w") as f:
+        json.dump(rect_data, f, indent=2)
+    print("Saved rectangle data to detected_rectangle.json")
+    cap.release()
+    cv2.destroyAllWindows()
+    exit(0)
