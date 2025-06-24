@@ -25,7 +25,7 @@ def run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z, step_z=50):
     y0= -1800
     z0 =  1500
 
-    x_start = x0 - zigzag_width / 2
+    x_start = x0 #- zigzag_width / 2
     z_start = z0 - total_z / 2
     num_steps = int(total_z / step_z)
 
