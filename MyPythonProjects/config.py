@@ -9,20 +9,20 @@ R = abb.Robot(ip='127.0.0.1')
 #R = abb.Robot(ip='192.168.125.1')
 
 # Example parameters:
-zigzag_width = 950
-total_z = 500
-Total_area_X = 500
+zigzag_width = 1150
+total_z = 700
+Total_area_X = 700
 
 Total_number_NODES_X = math.ceil(Total_area_X / zigzag_width)
 Total_number_NODES_X = max(1, Total_number_NODES_X)
 
-print(f"Will run {Total_number_NODES_X} top‐flange tiles in X")
+#print(f"Will run {Total_number_NODES_X} top‐flange tiles in X")
 
 for i in range(Total_number_NODES_X):
     R.call_flyfrompart()
-    run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z)
-    R.call_flyfrompart()
-    #NOT WORKING run_zigzag_left(R, Total_number_NODES_X, zigzag_width, total_z)
+    #run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z)
+    #R.call_flyfrompart()
+    #run_zigzag_left(R, Total_number_NODES_X, zigzag_width, total_z)
     #R.call_flyfrompart()
     #run_zigzag_right(R, Total_number_NODES_X, zigzag_width, total_z)
 
@@ -35,7 +35,7 @@ for i in range(Total_number_NODES_X):
    # R.set_external_axis(ext)
    # print(f"Shifted external X by {zigzag_width} mm → now {ext[0]}")
 
-print("All top‐flange tiles done.")
+#print("All top‐flange tiles done.")
 
 
 
