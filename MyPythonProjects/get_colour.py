@@ -43,6 +43,8 @@ while True:
     mask = cv2.inRange(hsv_img, lower, upper)
     kernel = np.ones((3,3),'uint8')
 
+    #hello again
+
     
     d_img = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel,iterations = 5)
 
@@ -53,4 +55,3 @@ while True:
         break
 
 cv2.destroyAllWindows()
-#hello
