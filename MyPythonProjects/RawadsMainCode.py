@@ -7,8 +7,8 @@ import threading
 import zigzag
 
 # --- Robot Initialization ---
-#R = abb.Robot(ip='127.0.0.1')
-R = abb.Robot(ip='192.168.125.1')
+R = abb.Robot(ip='127.0.0.1')
+#R = abb.Robot(ip='192.168.125.1')
 
 # --- Measurement and Control Variables ---
 points = []                                # clicked points
