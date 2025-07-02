@@ -22,8 +22,9 @@ def run_zigzag(R, Total_number_NODES_X, zigzag_width, total_z, step_z=50):
     
 
     ori = [0.8, -0.331, 0.191, 0.462]
-    y0= -1800
+    y0= -1900
     z0 =  1400
+    # x0 = 2500   CHANGE ACCORDING TO CAMERA DATA!! 
 
     x_start = x0 #- zigzag_width / 2
     z_start = z0 - total_z / 2
