@@ -8,7 +8,7 @@ import objectdetection
 import json
 import os
 
-R = abb.Robot(ip='127.0.0.1')
+#R = abb.Robot(ip='127.0.0.1')
 #R = abb.Robot(ip='192.168.125.1')
 
 

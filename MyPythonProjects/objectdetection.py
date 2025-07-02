@@ -3,13 +3,19 @@ import numpy as np
 import json
 
 def detect_rectangles(img):
-    ratio = 0.6961  # cm per pixel
+    ratio = 0.755  # cm per pixel
 
     # Expected rectangle size in cm
     MIN_WIDTH_CM = 110
     MAX_WIDTH_CM = 125
     MIN_HEIGHT_CM = 90
     MAX_HEIGHT_CM = 105
+
+
+   # MIN_WIDTH_CM = 110
+    #MAX_WIDTH_CM = 125
+    #MIN_HEIGHT_CM = 90
+    #MAX_HEIGHT_CM = 105
 
     rectangles = []
 

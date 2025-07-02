@@ -34,7 +34,9 @@ def run_zigzag_top(R, Total_number_NODES_X, zigzag_width, total_z, step_z=50):
     # 2) Read current Cartesian position (we'll keep Z constant)
     pose0 = R.get_cartesian()
     [x0, y0, z0], _ = pose0
-    y0=y0+450
+    x0=x0+450
+
+    y0=y0+1300
     z0=z0+100
 
     # 3) Use the jogged‐down quaternion for the spray gun
